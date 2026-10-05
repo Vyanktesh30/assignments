@@ -12,7 +12,6 @@ function loanDetails(customerName: string, creditScore: number, income: number, 
 
     if (creditScore > 750) {
         console.log(`${customerName}, your loan is approved as score is above limit ${creditScore}`);
-
     } else if (creditScore >= 650 && creditScore <= 750) {
         console.log(`${customerName}, your loan is proceed for further verification as your credit score is ${creditScore}`);
 
@@ -24,21 +23,17 @@ function loanDetails(customerName: string, creditScore: number, income: number, 
 
         if (empStatus) {
             console.log(`${customerName}, customer is employed: ${empStatus}`);
+            if (dbtratio < 40) {
+                console.log(`${customerName}, loan is approved as debt-to-income ratio is ${dbtratio}`);
+            } else {
+                console.log(`${customerName}, loan is rejected as debt-to-income ratio is ${dbtratio}`);
+            }
         } else {
             console.log(`${customerName}, loan is denied`);
         }
-
-        if (dbtratio < 40) {
-            console.log(`${customerName}, loan is approved as debt-to-income ratio is ${dbtratio}`);
-        } else {
-            console.log(`${customerName}, loan is rejected as debt-to-income ratio is ${dbtratio}`);
-        }
-
     } else if (creditScore < 650) {
         console.log(`${customerName}, loan is denied as your credit score is very low: ${creditScore}`);
     }
-
-
 }
 
 //calling fundtion

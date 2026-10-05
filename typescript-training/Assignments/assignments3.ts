@@ -5,9 +5,9 @@ let updatedMarks:number[]= []
 
 for (let i:number=0; i < marks.length; i++ ){
 
-    marks[i]+=10;
+    marks[i]!+=10;// adding ! symbol bcz if not added it will throw error but code will run, optional
 
-    updatedMarks.push(marks[i])
+    updatedMarks.push(marks[i]!)
 
 }
 console.log("student Names", students)
@@ -17,7 +17,7 @@ console.log("updatedMakrs", updatedMarks)
 
 let totalmakrs:number=0;
 
-for (mark of updatedMarks){
+for (let mark of updatedMarks){
     totalmakrs+=mark;
 
 }
